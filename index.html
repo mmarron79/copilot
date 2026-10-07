@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Portfolio and contact page showcasing projects, skills, and a developer contact form."
+    />
+    <title>Developer Portfolio | Projects, Skills, and Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header id="top" role="banner">
+      <div class="header-row">
+        <h1>Developer Portfolio</h1>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+      <nav id="primary-nav" class="nav-menu" aria-label="Main navigation" role="navigation">
+        <ul>
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about-me">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main role="main">
+      <section id="about-me" aria-labelledby="about-heading">
+        <h2 id="about-heading">About Me</h2>
+        <p>This is a basic HTML structure.</p>
+      </section>
+
+      <section id="projects" aria-labelledby="projects-heading" role="region">
+        <h2 id="projects-heading">Projects</h2>
+        <div class="project-filters" role="group" aria-label="Filter projects" hidden>
+          <button type="button" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" data-filter="web" aria-pressed="false">Web</button>
+          <button type="button" data-filter="python" aria-pressed="false">Python</button>
+        </div>
+        <p id="project-filter-status" class="visually-hidden" aria-live="polite"></p>
+        <article data-category="web">
+          <button
+            class="project-image-trigger"
+            type="button"
+            aria-label="Enlarge Project One preview"
+          >
+            <img src="project-one.svg" alt="Project One preview" />
+          </button>
+          <h3>Project One</h3>
+          <p>A sample project description.</p>
+        </article>
+        <article data-category="python">
+          <button
+            class="project-image-trigger"
+            type="button"
+            aria-label="Enlarge Project Two preview"
+          >
+            <img src="project-two.svg" alt="Project Two preview" />
+          </button>
+          <h3>Project Two</h3>
+          <p>Another sample project description.</p>
+        </article>
+      </section>
+
+      <section id="skills" aria-labelledby="skills-heading" role="region">
+        <h2 id="skills-heading">Skills</h2>
+        <ul>
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>JavaScript</li>
+          <li>Python</li>
+          <li>Git</li>
+          <li>Responsive Design</li>
+          <li>Problem Solving</li>
+        </ul>
+      </section>
+
+      <section id="contact" aria-labelledby="contact-heading" role="region">
+        <h2 id="contact-heading">Contact</h2>
+        <form action="#" method="post" aria-label="Contact form" novalidate>
+          <div>
+            <label for="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your name"
+              autocomplete="name"
+              aria-describedby="name-error"
+              required
+            />
+            <p class="field-error" id="name-error" aria-live="polite"></p>
+          </div>
+
+          <div>
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your email"
+              autocomplete="email"
+              aria-describedby="email-error"
+              required
+            />
+            <p class="field-error" id="email-error" aria-live="polite"></p>
+          </div>
+
+          <div>
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder="Write your message here"
+              aria-describedby="message-error"
+              required
+            ></textarea>
+            <p class="field-error" id="message-error" aria-live="polite"></p>
+          </div>
+
+          <button type="submit">Send Message</button>
+        </form>
+      </section>
+    </main>
+
+    <footer role="contentinfo">
+      <p>&copy; 2026</p>
+    </footer>
+
+    <dialog id="project-lightbox" aria-label="Project image preview">
+      <button class="lightbox-close" type="button" aria-label="Close image preview">
+        &times;
+      </button>
+      <img class="lightbox-image" src="" alt="" />
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
